@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Interest() {
+export default function Home() {
     return (
         <div>
-            <h1>Interest Page</h1>
+            <p>This is the home page</p>
         </div>
     )
 }
