@@ -91,21 +91,21 @@ export default function Interest() {
         <div className="topContainer">
          <div className="formArea">
                 <form onSubmit={handleSubmit}>
-                    <p className="headings">SET TOTAL BALANCE</p>
-                    <input className="input"  onChange={e => setTotalBalance(parseInt(e.target.value))} value={totalBalance}></input>
+                    <p className="headings">SET TOTAL MONTHLY BALANCE</p>
+                    <input className="input" placeholder="amount" onChange={e => setTotalBalance(parseInt(e.target.value))} value={totalBalance}></input>
                     <Button variant="outlined" color="secondary" onClick={handleSubmit}>Submit</Button>
                 </form>
                 <form className="cat" onSubmit={handleCategories}>
                     <p className="headings">ADD CATEGORIES</p>
-                    <input className="input" onChange={cat => setName(cat.target.value)} value={name}></input>
-                    <input className="input" onChange={per => setPercentage(parseInt(per.target.value))} value={percentage}></input>
+                    <input className="input" placeholder="category name" onChange={cat => setName(cat.target.value)} value={name}></input>
+                    <input className="input" placeholder="percentage" onChange={per => setPercentage(parseInt(per.target.value))} value={percentage}></input>
                     <Button variant="outlined" color="secondary" onClick={handleCategories}>Submit</Button>
                 </form>
                 <form className="spending" onSubmit={handleSpent}>
                     {/* <Dropdown className="test" options={dropdownList} onChange={e => setPickSpent(e)} placeholder="Select an option"/> */}
                     <div className={classes.root}>
                         <p className="headings">SPENT</p>
-                        <input className="input" onChange={num => setSpent(num.target.value)} value={spent}></input>
+                        <input className="input" placeholder="amount" onChange={num => setSpent(num.target.value)} value={spent}></input>
                         <Select
                             labelId="demo-simple-select-helper-label"
                             id="demo-simple-select-helper"
