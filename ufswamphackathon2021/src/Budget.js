@@ -23,7 +23,7 @@ export default function Interest() {
     const [pickSpent, setPickSpent] = useState('');
     const [dropdownList, setDropdownList] = useState([]);
     const [pieChartData, setPieChartData] = useState([]);
-    var colors = ['#fad15f', '#f043da', '#82f4ff'];
+    var colors = ['#fad15f', '#f043da', '#82f4ff', '#6CFF60', '#FFBA85'];
     const [colorCount, setColorCount] = useState(0);
     const [isSpentSubmitted, setIsSpentComitted] = useState(false);
     const [date, setDate] = useState('');
@@ -51,7 +51,7 @@ export default function Interest() {
         var currentPercent = totalPercent + percentage;
         if(currentPercent <= 100) {
             setTotalPercent(currentPercent);
-            setCategories(oldList => [...oldList, {name: name, percentage: percentage, catBalance: calcAmount}]);
+            setCategories(oldList => [...oldList, {name: name, percentage: percentage, catBalance: calcAmount, color: colors[colorCount]}]);
             setPieChartData(oldList => [...oldList, {title: name, value: percentage, color: colors[colorCount]}]);
             setDropdownList(oldList => [...oldList, name]);
             var count = colorCount + 1;
@@ -86,8 +86,10 @@ export default function Interest() {
 
     return (
         <div className="budget">
+        <div className="topText">
             <p className="title">BUDGET PAGE</p>
             <p className="date">{date}</p>
+        </div>
         <div className="topContainer">
          <div className="formArea">
                 <form onSubmit={handleSubmit}>
@@ -133,7 +135,8 @@ export default function Interest() {
                     <p className="headings">TOTAL BALANCES: ${displayBalance}</p>
                     <div className="catInfo">
                         {categories.map((catItem, index) =>
-                            <p>Category: {catItem.name} | Balance: ${catItem.catBalance} </p>
+                            <div className="tagBox" style={{backgroundColor: catItem.color}}><p>{catItem.name} | balance: ${catItem.catBalance} </p></div>
+                            
                             //<p>Category: {catItem.name} | Amount: ${catItem.catBalance} | Percentage: {catItem.percentage}</p>
                         )}
                         <p className="warning">{warning}</p>

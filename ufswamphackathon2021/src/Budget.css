@@ -7,9 +7,10 @@
     color: white;
 }
 
+
 .title {
     text-align: center;
-    padding: 20px;
+    padding-top: 20px;
     font-size: 30px;
     font-weight: 300;
     letter-spacing: 3px;
@@ -68,9 +69,17 @@
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 3px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .test {
     width
     : 200px;
+}
+
+.tagBox {
+    width: 400px;
+    height: 20px;
 }
