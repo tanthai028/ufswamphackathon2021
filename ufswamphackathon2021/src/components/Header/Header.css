@@ -4,14 +4,16 @@
 	color: #bdbdf0;
 	/*text-shadow: 2px 2px 5px #82f4ff;*/
 	background-color: #1a1e4d;
-	padding: 10px 50px;
-	margin-top: 10px;
+	padding: 20px 110px;
+	margin-left: 35px;
+	margin-right: 30px;
+	margin-top: 40px;
 	
 }
 
 #Header{
-	min-width: 100%;
-	float:left; 
+	width:1000px;
+	display: flex;
 	align-items: center;
 	vertical-align: middle;
 }
