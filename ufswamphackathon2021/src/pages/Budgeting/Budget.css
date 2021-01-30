@@ -11,22 +11,30 @@
 .title {
     text-align: center;
     padding-top: 20px;
-    font-size: 30px;
-    font-weight: 300;
-    letter-spacing: 3px;
+    font-size: 25px;
+    /* font-weight: 300; */
+    /* letter-spacing: 3px; */
+    font-family: Gill Sans, sans-serif;
+    color: #bdbdf0;
+    margin: 5
 }
 
 .headings {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 500;
     letter-spacing: 3px;
+    font-family: Gill Sans, sans-serif;
+	color: #bdbdf0;
 }
 
 .date {
     text-align: center;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 3px;
+    font-family: Gill Sans, sans-serif;
+    color: #bdbdf0;
+    margin: 0
 }
 
 .topContainer {
@@ -87,6 +95,13 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form {
     display: flex;
     flex-direction: column;
 }
