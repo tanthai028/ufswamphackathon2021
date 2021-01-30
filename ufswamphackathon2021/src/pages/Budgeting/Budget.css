@@ -1,0 +1,92 @@
+
+.budget {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1e4d;
+    color: white;
+}
+
+
+.title {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.headings {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.date {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.topContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    text-align: center;
+    
+}
+
+.formArea {
+    width: 50%;
+
+}
+
+.infoArea {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+.totalBalance {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.input {
+    background-color: #1a1e4d;
+    border-color: #8a2be2;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.catInfo {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tagBox {
+    width: 400px;
+    height: 20px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
