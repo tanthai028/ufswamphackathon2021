@@ -1,7 +1,10 @@
 import React from "react";
-import Home from './pages/Home.js';
-import Interest from './pages/Interest.js';
-import How from './pages/How.js';
+import {Nav} from 'react-bootstrap'
+import Navbar from 'react-bootstrap/Navbar'
+import Home from './pages/Home/Home.js';
+import Interest from './pages/Interest/Interest.js';
+import How from './pages/How/How.js';
+import NotFound from "./pages/NotFound/NotFound";
 import './App.css';
 import Header from "./components/Header/Header";
 import {
@@ -15,12 +18,12 @@ import {
 function App() {
   return (
     <Router>
-      <div>      
-        <Header />
+      <div id = "Head">      
+        <Header/>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/Home" component={Home} />
             <Route exact path="/Interest" component={Interest} />
-            <Route exact path="/How" component={How} />
+            <Route exact path="/Tutorials" component={How} />
           </Switch>
       </div>
     </Router>

@@ -1,3 +1,17 @@
-.h1{
-	font-size: 30px;
+.Link{
+	font-size: 20px;
+	font-family: Gill Sans, sans-serif;
+	color: #bdbdf0;
+	/*text-shadow: 2px 2px 5px #82f4ff;*/
+	background-color: #1a1e4d;
+	padding: 10px 50px;
+	margin-top: 10px;
+	
+}
+
+#Header{
+	min-width: 100%;
+	float:left; 
+	align-items: center;
+	vertical-align: middle;
 }
