@@ -5,9 +5,9 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 export default function Interest() {
     const classes = useStyles();
-    const [annualIncome, setAnnualIncome] = useState(0) 
-    const [loanBalance, setLoanBalance] = useState(0)
-    const [days, setDays] = useState(0)
+    const [annualIncome, setAnnualIncome] = useState('') 
+    const [loanBalance, setLoanBalance] = useState('')
+    const [days, setDays] = useState('')
     const [result, setResult] = useState(0)
     
     const calculate = (e) => {
@@ -27,13 +27,13 @@ export default function Interest() {
             <p className="title">Interest</p>
             <form onSubmit = {calculate}>
                 <p className="headings">INPUT ANNUAL INTEREST</p>
-                <input input className="input" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
+                <input placeholder="annual interest" className="input" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
                 <br></br>
                 <p className="headings">INPUT LOAN BALANCE</p>
-                <input input className="input" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
+                <input  placeholder="loan balance" className="input" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
                 <br></br>
                 <p className="headings">INPUT DAYS SINCE LAST PAYMENT</p>
-                <input input className="input" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
+                <input  placeholder="days" className="input" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
                 <br></br>
                 <br></br>
                 <Button  variant="outlined" color="secondary" className={classes.button}>Submit</Button>
