@@ -5,42 +5,72 @@
     height: 100%;
     background-color: #1a1e4d;
     color: white;
-    text-align: center;
 }
 
 .title {
+    text-align: center;
     padding: 20px;
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: 3px;
 }
 
 .headings {
     font-size: 16px;
-    font-weight: 120;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.date {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.topContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    text-align: center;
+    
+}
+
+.formArea {
+    width: 50%;
+
+}
+
+.infoArea {
+    width: 50%;
+
+}
+
+.totalBalance {
+    font-size: 40px;
+    font-weight: 300;
     letter-spacing: 3px;
 }
 
 .input {
     background-color: #1a1e4d;
-    border-color: blueviolet;
+    border-color: #8a2be2;
     height: 30px;
     margin: 10px;
     border-radius: 5px;
     border-width: 1px;
     box-shadow: 0;
     color: white;
+    font-size: 16px;
+}
+
+.catInfo {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 3px;
 }
 
 .test {
     width
     : 200px;
-}
-
-.spending {
-    justify-content: center;
-}
-
-.spendingBoxes {
-    
 }
