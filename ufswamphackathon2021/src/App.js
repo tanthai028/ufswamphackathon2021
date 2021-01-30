@@ -1,5 +1,6 @@
 import React from "react";
 import Home from './Home.js';
+import Game from './Game.js';
 import Interest from './Interest.js';
 import How from './How.js';
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/Interest" component={Interest} />
           <Route exact path="/How" component={How} />
+          <Route exact path="/Game" component={Game} />
         </Switch>
     </Router>
   );
