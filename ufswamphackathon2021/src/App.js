@@ -1,8 +1,9 @@
 import React from "react";
-import Home from './Home.js';
-import Interest from './Interest.js';
-import How from './How.js';
+import Home from './pages/Home.js';
+import Interest from './pages/Interest.js';
+import How from './pages/How.js';
 import './App.css';
+import Header from "./components/Header/Header";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,24 +15,14 @@ import {
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/Interest">Interest</Link>
-            </li>
-            <li>
-              <Link to="/How">How</Link>
-            </li>
-          </ul>
-        </nav>
+      <div>      
+        <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Interest" component={Interest} />
+            <Route exact path="/How" component={How} />
+          </Switch>
       </div>
-
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/Interest" component={Interest} />
-          <Route exact path="/How" component={How} />
-        </Switch>
     </Router>
   );
 }
