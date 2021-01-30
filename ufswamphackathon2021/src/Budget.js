@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
 import moment from 'react-moment';
 import FormControl from '@material-ui/core/FormControl';
-
+import { PieChart } from 'react-minimal-pie-chart';
 
 
 export default function Interest() {
@@ -76,7 +76,7 @@ export default function Interest() {
             <p className="title">BUDGET PAGE</p>
             <form onSubmit={handleSubmit}>
                 <p className="headings">SET TOTAL BALANCE</p>
-                <input className="input" onChange={e => setTotalBalance(parseInt(e.target.value))} value={totalBalance}></input>
+                <input className="input"  onChange={e => setTotalBalance(parseInt(e.target.value))} value={totalBalance}></input>
                 <Button variant="outlined" color="secondary" onClick={handleSubmit}>Submit</Button>
             </form>
             <form className="cat" onSubmit={handleCategories}>
@@ -96,10 +96,15 @@ export default function Interest() {
                         id="demo-simple-select-helper"
                         className={classes.selectEmpty}
                         value={pickSpent}
+                        inputProps={{
+                            classes: {
+                                icon: classes.icon,
+                            },
+                        }}
                         onChange={handleChoice}
                         >
                         <MenuItem value="">
-                            <em>None</em>
+                            <em>Select</em>
                         </MenuItem>
                         {categories.map((catItem, index) =>
                             <MenuItem value={catItem.name}>{catItem.name}</MenuItem>
@@ -119,6 +124,15 @@ export default function Interest() {
                 <p>{warning}</p>
                 <p>{pickSpent}</p>
             </div>
+
+            <PieChart
+                radius={10}
+                data={[
+                    { title: 'One', value: 10, color: '#E38627' },
+                    { title: 'Two', value: 15, color: '#C13C37' },
+                    { title: 'Three', value: 20, color: '#6A2135' },
+                ]}
+                />;
         </div>
     )
 }
@@ -130,9 +144,17 @@ const useStyles = makeStyles((theme) => ({
     },
     
     selectEmpty: {
-      marginTop: theme.spacing(2),
-      width: 200,
-      borderColor: 'red'
+        width: 200,
+        marginRight: 10,
+    "&:before": {
+        borderColor: "blueviolet",
+        //width: 200,
+      }, 
+      '&:after': {
+        borderColor: "blueviolet",
+    }
+    }, icon: {
+        fill: "blueviolet",
     },
     multilineColor:{
         color:'red',
