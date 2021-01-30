@@ -1,9 +1,9 @@
-div{
+.homeDiv{
 	background-image: url('../../assets/home.png');
 	background-repeat: no-repeat;
   	background-size: cover;
   	height:1000px;
-  	color: white;
+	color: white;
 }
 
 p{
