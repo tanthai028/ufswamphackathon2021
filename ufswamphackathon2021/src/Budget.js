@@ -24,7 +24,9 @@ export default function Interest() {
     const [spent, setSpent] = useState(0);
     const [pickSpent, setPickSpent] = useState('');
     const [dropdownList, setDropdownList] = useState([]);
-
+    const [pieChartData, setPieChartData] = useState([]);
+    var colors = ['#fad15f', '#f043da', '#82f4ff'];
+    const [colorCount, setColorCount] = useState(0);
     
 
     const options = [
@@ -51,8 +53,10 @@ export default function Interest() {
         if(currentPercent <= 100) {
             setTotalPercent(currentPercent);
             setCategories(oldList => [...oldList, {name: name, percentage: percentage, catBalance: calcAmount}]);
+            setPieChartData(oldList => [...oldList, {title: name, value: percentage, color: colors[colorCount]}]);
             setDropdownList(oldList => [...oldList, name]);
-            console.log(dropdownList);
+            var count = colorCount + 1;
+            setColorCount(count);
         } else {
             setWarning("Check Value or 100% Reached.");
         }
@@ -124,15 +128,17 @@ export default function Interest() {
                 <p>{warning}</p>
                 <p>{pickSpent}</p>
             </div>
+           
 
-            <PieChart
-                radius={10}
-                data={[
-                    { title: 'One', value: 10, color: '#E38627' },
-                    { title: 'Two', value: 15, color: '#C13C37' },
-                    { title: 'Three', value: 20, color: '#6A2135' },
-                ]}
-                />;
+            <div>
+                <PieChart
+                    radius={10}
+                    data={
+                        pieChartData 
+                    }
+                    />;
+            </div>
+            
         </div>
     )
 }
