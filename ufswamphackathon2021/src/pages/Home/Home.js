@@ -8,7 +8,6 @@ export default function Home() {
             <p>test</p>
             <p>test</p>
             <p>test</p> 
-            <p>      <Link to="/Game" className = "Link">Game</Link></p>
         </div>
     )
 }

@@ -20,7 +20,7 @@ import {
 function App() {
   return (
     <Router>
-      <div id = "Head">      
+      <div>      
         <Header/>
           <Switch>
             <Route exact path="/Home" component={Home} />

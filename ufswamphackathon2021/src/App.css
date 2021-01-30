@@ -1,5 +1,5 @@
-#Header{
-	background-color: #1a1e4d;
-	height: 50px;
-	
+html {
+    height: 100%;
+    width: 100%;
+    font-size:0;
 }
