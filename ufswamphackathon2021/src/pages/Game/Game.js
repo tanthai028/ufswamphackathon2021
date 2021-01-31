@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Game.css';
 
 export default function Game() {
     const [reply, setReply] = useState(0)
@@ -25,7 +26,7 @@ export default function Game() {
     }
  }
     return (
-        <div>
+        <div className = "gamePage">
         <h1>The spending game</h1>
         <form onSubmit = {run}>
             <p>{questions}</p>

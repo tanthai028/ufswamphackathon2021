@@ -30,21 +30,3 @@
     font-family: Gill Sans, sans-serif;
 	color: #bdbdf0;
 }
-
-.module_Tutorials {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    color: #bdbdf0;
-    align-items: center;
-    margin:0 auto;
-}
-
-.module_Card{
-    font-size: 14px;
-    font-family: Gill Sans, sans-serif;
-    margin: 0 auto;
-    background-color: #bdbdf0;
-    padding: 20px;
-}
