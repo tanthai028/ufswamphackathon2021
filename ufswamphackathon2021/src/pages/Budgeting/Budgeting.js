@@ -85,7 +85,6 @@ export default function Interest() {
 
 
 
-
     //object for 
 
     return (
@@ -198,7 +197,7 @@ export default function Interest() {
                         <div className="spendingObject">
                             <p className="headings">{info.date}</p>
                             <p className="headings">{info.name}</p>
-                            <p className="headings">SPENT: {info.spent}</p>
+                            <p className="headings">SPENT ${info.spent}</p>
                             <p className="headings">{info.note}</p>
                         </div>
                         
