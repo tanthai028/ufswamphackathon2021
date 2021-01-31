@@ -23,9 +23,11 @@ Our web application is built with Javascript using the React framework to implem
 https://devpost.com/software/retrofi?ref_content=my-projects-tab&ref_feature=my_projects
 
 # To run it:
+```
 1. git clone 
 2. cd ufswamphacks2021
 3. cd ufswamphacks2021
 (we messed up the directories and accidentally created a nested directory)
 4. npm install
 5. npm start
+```
