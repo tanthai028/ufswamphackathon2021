@@ -42,9 +42,27 @@
 }
 
 .module_Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     font-size: 14px;
     font-family: Gill Sans, sans-serif;
     margin: 0 auto;
     background-color: #bdbdf0;
     padding: 20px;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+
+}
+
+.module_Cards {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: Gill Sans, sans-serif;
+    text-align: center;
+	
 }

@@ -3,7 +3,7 @@
 	font-family: Gill Sans, sans-serif;
 	color: #bdbdf0;
 	/*text-shadow: 2px 2px 5px #82f4ff;*/
-	background-color: #1a1e4d;
+	background-color: #0a0e33;
 	padding: 10px 75px;
 	margin-left: 35px;
 	margin-right: 30px;
@@ -17,5 +17,5 @@
 	line-height: 60px;
 	align-items: center;
 	vertical-align: bottom;
-	background-color: #1a1e4d;
+	background-color: #0a0e33;
 }

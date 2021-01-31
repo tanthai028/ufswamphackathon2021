@@ -23,7 +23,7 @@ export default function Interest() {
     const [pickSpent, setPickSpent] = useState('');
     const [dropdownList, setDropdownList] = useState([]);
     const [pieChartData, setPieChartData] = useState([]);
-    var colors = ['#fad15f', '#f043da', '#82f4ff', '#6CFF60', '#FFBA85'];
+    var colors = ['#fad15f', '#f043da', '#82f4ff', '#6CFF60', '#FFBA85', '#FF0E0E'];
     const [colorCount, setColorCount] = useState(0);
     const [isSpentSubmitted, setIsSpentComitted] = useState(false);
     const [date, setDate] = useState('');
@@ -97,8 +97,8 @@ export default function Interest() {
          <div className="formArea">
                 <form className="form" onSubmit={handleSubmit}>
                     <p className="headings">SET TOTAL MONTHLY BALANCE</p>
-                    <div className="">
-                        <input className="input" placeholder="amount" 
+                    <div>
+                        <input className="inputBalance" placeholder="amount" 
                             onChange={e => setTotalBalance(parseInt(e.target.value))} value={totalBalance}>
                         </input>
                         <Button variant="outlined" color="secondary" className={classes.button} 
@@ -110,10 +110,10 @@ export default function Interest() {
                 <form className="form" onSubmit={handleCategories}>
                     <p className="headings">ADD CATEGORIES</p>
                     <div className="catField">
-                        <input className="input" placeholder="category" 
+                        <input className="inputBalance" placeholder="category" 
                             onChange={cat => setName(cat.target.value)} value={name}>
                         </input>
-                        <input className="input" placeholder="percentage" 
+                        <input className="inputBalance" placeholder="percentage" 
                             onChange={per => setPercentage(parseInt(per.target.value))} value={percentage}>
                         </input>
                         <Button variant="outlined" color="secondary" className={classes.buttonAdd} 
@@ -125,7 +125,7 @@ export default function Interest() {
                     {/* <Dropdown className="test" options={dropdownList} onChange={e => setPickSpent(e)} placeholder="Select an option"/> */}
                     <div className={classes.root}>
                         <p className="headings">SPENT</p>
-                        <input className="input" placeholder="amount" className="input"
+                        <input className="inputBalance" placeholder="amount" 
                             onChange={num => setSpent(num.target.value)} value={spent}>
                         </input>
                         <Select
@@ -238,16 +238,16 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 15,
         color: "white",
         "&:before": {
-            borderColor: "#8a2be2",
+            borderColor: "#562a73",
             //width: 200,
         }, 
         '&:after': {
-            borderColor: "#8a2be2",
+            borderColor: "#562a73",
         },
     }, 
     select: {
         "& ul": {
-            backgroundColor: "#8a2be2",
+            backgroundColor: "#562a73",
         },
         "& li": {
             fontSize: 12,
@@ -275,7 +275,7 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: 4,
       position: 'relative',
       backgroundColor: '#1a1e4d',
-      border: '1px solid #8a2be2',
+      border: '1px solid #562a73',
       fontSize: '15px',
       transition: theme.transitions.create(['border-color', 'box-shadow']),
       // Use the system font instead of the default Roboto font.
@@ -294,7 +294,7 @@ const useStyles = makeStyles((theme) => ({
       '&:focus': {
         fontSize: '15px',
         borderRadius: 4,
-        borderColor: '#8a2be2',
+        borderColor: '#562a73',
       },
     },
   }))(InputBase);

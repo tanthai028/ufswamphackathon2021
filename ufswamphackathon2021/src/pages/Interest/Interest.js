@@ -27,13 +27,13 @@ export default function Interest() {
             <p className="title">Interest</p>
             <form onSubmit = {calculate}>
                 <p className="headings">INPUT ANNUAL INTEREST</p>
-                <input placeholder="annual interest" className="input" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
+                <input placeholder="annual interest" className="inputInterest" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
                 <br></br>
                 <p className="headings">INPUT LOAN BALANCE</p>
-                <input  placeholder="loan balance" className="input" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
+                <input  placeholder="loan balance" className="inputInterest" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
                 <br></br>
                 <p className="headings">INPUT DAYS SINCE LAST PAYMENT</p>
-                <input  placeholder="days" className="input" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
+                <input  placeholder="days" className="inputInterest" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
                 <br></br>
                 <br></br>
                 <Button  variant="outlined" color="secondary" className={classes.button}>Submit</Button>

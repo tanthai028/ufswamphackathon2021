@@ -6,6 +6,10 @@ import Home from './pages/Home/Home.js';
 import Interest from './pages/Interest/Interest.js';
 import Tutorials from './pages/Tutorials/Tutorials.js';
 import Budgeting from "./pages/Budgeting/Budgeting.js";
+import Bank from "./pages/Tutorials/bank/Bank.js";
+import Checks from "./pages/Tutorials/bills_checks/Checks.js";
+import Taxes from "./pages/Tutorials/taxes/Taxes.js";
+import Credit from "./pages/Tutorials/credit_debit/Credit.js";
 import Game from "./pages/Game/Game.js";
 import './App.css';
 import Header from "./components/Header/Header";
@@ -28,6 +32,10 @@ function App() {
             <Route exact path="/Budgeting" component={Budgeting} />
             <Route exact path="/Tutorials" component={Tutorials} />
             <Route exact path="/Game" component={Game} />
+            <Route exact path="/Bank" component={Bank} />
+            <Route exact path="/Checks" component={Checks} />
+            <Route exact path="/Taxes" component={Taxes} />
+            <Route exact path="/Credit" component={Credit} />
           </Switch>
       </div>
     </Router>

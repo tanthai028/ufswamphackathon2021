@@ -68,9 +68,9 @@
     letter-spacing: 3px;
 }
 
-.input {
+.inputBalance {
     background-color: #1a1e4d;
-    border-color: #8a2be2;
+    border-color: #562a73;
     height: 30px;
     width: 160px;
     margin: 10px;
@@ -81,13 +81,13 @@
     font-size: 16px;
 }
 
-.input::placeholder {
-    color: #8a2be2;
+.inputBalance::placeholder {
+    color: #562a73;
 }
 
 .noteInput {
     background-color: #1a1e4d;
-    border-color: #8a2be2;
+    border-color: #562a73;
     height: 100px;
     width: 450px;
     margin: 10px;
@@ -102,7 +102,7 @@
 
 
 .noteInput::placeholder {
-    color: #8a2be2;
+    color: #562a73;
 }
 
 .catInfo {
