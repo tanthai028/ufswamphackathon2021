@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Tutorials() {
     return (
-        <div className="tutorialPage">
+        <div className="_tutorialPage">
           <p className="title">Tutorials</p>
            <div className = "module_Tutorials">
 
