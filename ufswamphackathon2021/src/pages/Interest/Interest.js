@@ -25,13 +25,13 @@ export default function Interest() {
         <div className="interestPage">
         <p className="title">Interest Page</p>
         <form onSubmit = {calculate}>
-            <p className="headings">Input annual interest</p>
+            <p className="headings">INPUT ANNUAL INTEREST</p>
             <input className="inputInterest" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
             <br></br>
-            <p className="headings">Input loan balance</p>
+            <p className="headings">INPUT LOAN BALANCE</p>
             <input className="inputInterest" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
             <br></br>
-            <p className="headings">Input days since last payments</p>
+            <p className="headings">INPUT DAYS SINCE LAST PAYMENTS</p>
             <input className="inputInterest" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
             <br></br>
             <br></br>

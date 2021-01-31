@@ -9,7 +9,6 @@
     background-image: url('../../assets/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height:1000px;
 }
 
 .title {
@@ -31,9 +30,9 @@
 	color: #bdbdf0;
 }
 
-.input {
+.gameInput {
     background-color: #1a1e4d;
-    border-color: #8a2be2;
+    border-color: #562a73;
     height: 30px;
     margin: 10px;
     border-radius: 5px;
@@ -43,8 +42,8 @@
     font-size: 16px;
 }
 
-.input::placeholder {
-    color: #8a2be2;;
+.gameInput::placeholder {
+    color: #562a73;;
 }
 
 .info {
@@ -59,4 +58,34 @@
     margin: 20px;
     color: #bdbdf0;
     font-weight: 500;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: #bdbdf0;
+    font-weight: 500;
+    
+}
+
+.storyText {
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 20px;
+}
+
+.healthText {
+    margin-left: 550px;
+    margin-right: 550px;
+    padding: 40px;
+    border: dashed;
+    border-width: 4px;
+    border-color: red;
 }
