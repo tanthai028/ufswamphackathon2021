@@ -6,8 +6,8 @@ export default function Bank() {
         <div className="tutorialPage">
           <p className="title">Banking 101</p>
            <div className="explainBank">
-            <p className="text">Why use a bank?</p>
-                <ul className="text">
+            <p className="headings">WHY USE A BANK?</p>
+                <ul className="bankText">
                     <li>Makes it possible to shop online and in stores</li>
                     <li>Allows you bills and withdraw money from ATMs</li>
                     <li>Allows you to deposit and lend money</li>
@@ -17,14 +17,14 @@ export default function Bank() {
            </div>
 
            <div className="explainBank">
-            <p className="text">Choosing a bank</p>
-                <p className="text2">Storing your money in cash isn't always safe. There are many examples of why it isn't safe. 
+            <p className="headings">CHOOSING A BANK</p>
+                <p className="bankText">Storing your money in cash isn't always safe. There are many examples of why it isn't safe. 
                     For example, in the case of a burglary, someone you know taking your money, a natural disaster, or a fire in your house. In summary, if money is something hard to get for you, you can't afford
                     to lose it. Banks are the most secure places to store your money. This means that any money you store in banks will be protected, as long as you choose the right bank.
                 </p>
 
-                <p className="text">You want to look for banks that have:</p>
-                <ul className="text">
+                <p className="headings">YOU WANT TO LOOK FOR BANKS THAT HAVE :</p>
+                <ul className="bankText">
                     <li>
                         <a href="https://www.investopedia.com/terms/f/fdic.asp">Federal Deposit Insurance Corporation (FDIC)</a>
                     </li>
@@ -36,12 +36,12 @@ export default function Bank() {
            </div>
 
            <div className="explainBank">
-            <p className="text">Bank Fees</p>
-            <p className="text2">To make a profit and pay operating expenses, banks typically charge for the services they provide. 
+            <p className="headings">BANK FEES</p>
+            <p className="bankText">To make a profit and pay operating expenses, banks typically charge for the services they provide. 
             When a bank lends you money, it charges interest on the loan. Even fee-free checking and savings accounts have some fees.</p>
 
-            <p className="text2">Here are some situation where you may encounter bank fees:</p>
-            <ul className="text">
+            <p className="headings">HERE ARE SOME SITUATIONS WHERE YOU MAY ENCOUNTER BANK FEES:</p>
+            <ul className="bankText">
                 <li>You may encounter fees for letting your balance fall below a certain threshold</li>
                 <li>Not having your paycheck directly deposited to your account, overdrawing your account</li>
                 <li>Using an ATM</li>
@@ -50,8 +50,8 @@ export default function Bank() {
            </div>
 
            <div className="explainBank">
-            <p className="text">Smart Banking Tips</p>
-            <ol className="text2">
+            <p className="headings">SMART BANKING TIPS</p>
+            <ol className="bankText">
                 <li>Re-evaluate your bank</li>
                 <li>Don’t assume your bank is giving you the best rate</li>
                 <li>Don’t let a high rate fool you</li>
