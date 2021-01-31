@@ -1,5 +1,5 @@
 
-.tutorialPage {
+.taxPage {
     flex: 1;
     width: 100%;
     height: 100vh;
@@ -9,6 +9,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height:1000px;
+        display: flex;
+    justify-content: center;
+    
 }
 
 
@@ -29,4 +32,59 @@
     letter-spacing: 3px;
     font-family: Gill Sans, sans-serif;
 	color: #bdbdf0;
+}
+#content {
+    display: inline-flex;
+
+}
+
+#t2_content{
+    padding: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-style: solid;
+    border-color: #bdbdf0;
+    border-radius: 70px;
+    border-width: 1px;
+}
+.button{
+    text-align: center;
+    margin: 200px 60px;
+    padding: 40px;
+    font-size: 25px;
+    font-family: Gill Sans, sans-serif;
+    color: #bdbdf0;
+    border-style: solid;
+    border-color: #bdbdf0;
+    border-radius: 70px;
+    border-width: 1px;
+}
+
+.button:hover{
+    text-shadow: 0 0 3px #bdbdf0;
+    box-shadow: 0 0 10px #bdbdf0;
+}
+
+.buffer{
+    margin: 200px 60px;
+    padding: 60px 65px;
+    font-size: 25px;
+    border-style: solid;
+    border-color: #bdbdf0;
+    border-radius: 60px;
+    border-width: 1px;
+}
+
+.q{
+    margin-left: 90px;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 15px;
+    color: #bdbdf0;
+    height: 60px;
+    width: 100px;
+    background-color: #1a1e4d;
+    border-color: #bdbdf0;
+    border-radius: 20px;
+    border-width: 1px;
 }
