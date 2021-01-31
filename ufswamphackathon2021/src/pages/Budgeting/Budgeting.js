@@ -174,7 +174,7 @@ export default function Interest() {
                     </div>
              </div>
         </div>
-        <div style={{ borderTop: "0.5px solid #bdbdf0 ", marginLeft: 20, marginRight: 20 }}></div>
+        <div style={{ borderTop: "0.5px solid #bdbdf0 ", marginLeft: 20, marginRight: 20, marginTop: 100, marginBottom: 50 }}></div>
         <div className="bottomInfo">
         
              <div className="pieChartContainer">
