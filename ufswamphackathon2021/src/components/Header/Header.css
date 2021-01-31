@@ -13,9 +13,11 @@
 }
 
 #_Header{
-	height:60px;
+	height:70px;
 	line-height: 60px;
 	align-items: center;
 	vertical-align: bottom;
 	background-color: #1a1e4d;
+	display: flex;
+    justify-content: center;
 }

@@ -70,7 +70,7 @@
 
 .input {
     background-color: #1a1e4d;
-    border-color: #8a2be2;
+    border-color: #562a73;
     height: 30px;
     width: 160px;
     margin: 10px;
@@ -134,6 +134,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    border-color: #562a73;
 }
 
 .bottomInfo {

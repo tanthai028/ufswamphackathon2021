@@ -3,7 +3,6 @@
     flex: 1;
     width: 100%;
     height: 100vh;
-    background-color: #1a1e4d;
     color: white;
     text-align: center;
     background-image: url('../../assets/background.png');
@@ -33,7 +32,7 @@
 
 .input {
     background-color: #1a1e4d;
-    border-color: #8a2be2;
+    border-color: #562a73;
     height: 30px;
     margin: 10px;
     border-radius: 5px;
