@@ -1,33 +1,31 @@
 import React from 'react'
 import './Taxes.css';
+import Tax_brackets from "../../../assets/Tax_brackets.mp4";
+import { Link } from 'react-router-dom';
 
 export default function Taxes() {
     return (
-        <div className="tutorialPage">
-          <p className="title">Tutorials</p>
+        <div className="taxPage">
+          
            <div>
-              <div className="modules">
-              <p className = "title" >Credit and Debit 101</p>
-              </div>
-
-              <div className="modules">
-              <p className = "title" >Taxes 101</p>
-              </div>
-
-              <div className="modules">
-              <p className = "title" >How To: Banking</p>
-              </div>
-
-              <div className="modules">
-              <p className = "title" >How To: Checks and Bills</p>
-              </div>
               
-           </div>
-           <div className="checkContainer">
-               <div className="check">
-                   
-               </div>
-           </div>
+              <p className="title">How does the Tax System work?</p>
+
+              <p className = "title"> Watch this video to find out!</p>
+              
+              <div id = "content">
+
+                <p className = "buffer">     </p>
+
+                <video id = "Tax_break" width="900"  controls>
+                <source src = {Tax_brackets} type='video/mp4'></source>
+                </video>
+
+                <Link to="/Taxes2" className = "button"> Next </Link>
+
+              </div>
+
+            </div>
         </div>
     )
 }
