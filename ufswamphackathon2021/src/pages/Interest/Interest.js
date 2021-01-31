@@ -39,7 +39,7 @@ export default function Interest() {
                 onClick={calculate}>Submit
             </Button>
         </form>
-        <p className="headings">Interest occured since last payment: {result}</p>
+        <p className="headingInterest">Interest occured since last payment: {result}</p>
     </div>
     )
 }
