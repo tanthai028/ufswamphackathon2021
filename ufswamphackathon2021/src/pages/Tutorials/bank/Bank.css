@@ -5,10 +5,19 @@
     height: 100vh;
     background-color: #1a1e4d;
     color: #bdbdf0;
-    background-image: url('../../assets/background.png');
+    background-image: url('../../../assets/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     height:1000px;
+}
+
+.text {
+    font-size: 15px;
+}
+
+.text2 {
+    font-size: 15px;
+    margin: 1%;
 }
 
 
