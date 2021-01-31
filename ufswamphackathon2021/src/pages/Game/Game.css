@@ -1,16 +1,16 @@
 
-.tutorialPage {
+.gamePage {
     flex: 1;
     width: 100%;
     height: 100vh;
     background-color: #1a1e4d;
-    color: #bdbdf0;
+    color: white;
+    text-align: center;
     background-image: url('../../assets/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     height:1000px;
 }
-
 
 .title {
     text-align: center;
@@ -31,20 +31,32 @@
 	color: #bdbdf0;
 }
 
-.module_Tutorials {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
+.input {
+    background-color: #1a1e4d;
+    border-color: #8a2be2;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: 0;
     color: #bdbdf0;
-    align-items: center;
-    margin:0 auto;
+    font-size: 16px;
 }
 
-.module_Card{
+.input::placeholder {
+    color: #8a2be2;;
+}
+
+.info {
     font-size: 14px;
-    font-family: Gill Sans, sans-serif;
-    margin: 0 auto;
-    background-color: #bdbdf0;
-    padding: 20px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: #bdbdf0;
+    font-weight: 500;
 }

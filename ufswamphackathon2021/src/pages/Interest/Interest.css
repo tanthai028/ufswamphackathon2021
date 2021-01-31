@@ -6,6 +6,10 @@
     background-color: #1a1e4d;
     color: white;
     text-align: center;
+    background-image: url('../../assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:1000px;
 }
 
 .title {
