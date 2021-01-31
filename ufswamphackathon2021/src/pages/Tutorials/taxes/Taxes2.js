@@ -1,6 +1,5 @@
 import React, {useState } from 'react'
 import './Taxes.css';
-import Tax_brackets from "../../../assets/Tax_brackets.mp4";
 import { Link } from 'react-router-dom';
 
 export default function Taxes2() {
@@ -68,7 +67,7 @@ export default function Taxes2() {
 
                   </form>
 
-                <Link to="/Taxes2" className = "button"> Next </Link>
+                <Link to="/Taxes3" className = "button"> Next </Link>
 
               </div>
 

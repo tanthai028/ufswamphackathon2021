@@ -10,6 +10,8 @@ import Bank from "./pages/Tutorials/bank/Bank.js";
 import Checks from "./pages/Tutorials/bills_checks/Checks.js";
 import Taxes from "./pages/Tutorials/taxes/Taxes.js";
 import Taxes2 from "./pages/Tutorials/taxes/Taxes2.js";
+import Taxes3 from "./pages/Tutorials/taxes/Taxes3.js";
+import Taxes4 from "./pages/Tutorials/taxes/Taxes4.js";
 import Credit from "./pages/Tutorials/credit_debit/Credit.js";
 import Game from "./pages/Game/Game.js";
 import './App.css';
@@ -37,6 +39,8 @@ function App() {
             <Route exact path="/Checks" component={Checks} />
             <Route exact path="/Taxes" component={Taxes} />
             <Route exact path="/Taxes2" component={Taxes2} />
+            <Route exact path="/Taxes3" component={Taxes3} />
+            <Route exact path="/Taxes4" component={Taxes4} />
             <Route exact path="/Credit" component={Credit} />
           </Switch>
       </div>

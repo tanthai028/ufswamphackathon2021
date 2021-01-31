@@ -3,7 +3,7 @@ import './Bank.css';
 
 export default function Bank() {
     return (
-        <div className="tutorialPage">
+        <div className="bankPage">
           <p className="title">Banking 101</p>
            <div className="explainBank">
             <p className="headings">WHY USE A BANK?</p>

@@ -105,3 +105,15 @@
     border-width: 1px;
     align-content: center;
 }
+
+#income{
+    margin: 20px;
+    height: 55px;
+    font-size: 15px;
+    color: #bdbdf0;
+    font-family: Gill Sans, sans-serif;
+    background-color: #1a1e4d;
+    border-color: #bdbdf0;
+    border-radius: 20px;
+    border-width: 1px;
+}
