@@ -17,6 +17,7 @@ export default function Interest() {
     const [percentage, setPercentage] = useState('');
     const [categories, setCategories] = useState([]);
     const [totalPercent, setTotalPercent] = useState(0);
+    const [notes, setNotes] = useState("");
     const [warning, setWarning] = useState('')
     const [spent, setSpent] = useState('');
     const [pickSpent, setPickSpent] = useState('');
@@ -26,6 +27,7 @@ export default function Interest() {
     const [colorCount, setColorCount] = useState(0);
     const [isSpentSubmitted, setIsSpentComitted] = useState(false);
     const [date, setDate] = useState('');
+    const [history, setHistory] = useState([]);
     
 
     useEffect(() => { 
@@ -64,13 +66,16 @@ export default function Interest() {
         setIsSpentComitted(true);
     }
 
+
     useEffect(() => {
         if (isSpentSubmitted) {
             Object.keys(categories).map(function(key,index) {
                 if(pickSpent == categories[key].name && categories[key].catBalance - spent >= 0) {
                     categories[key].catBalance  = categories[key].catBalance - spent;
-                    console.log(categories[key].catBalance);
-                    console.log(categories);
+    
+                    setHistory(list => [...list, {name: categories[key].name, note: notes, spent: spent, date: date}]);
+                    console.log(history);
+                    console.log(notes);
                 }
             setIsSpentComitted(false);
            })
@@ -106,13 +111,13 @@ export default function Interest() {
                 <form className="form" onSubmit={handleCategories}>
                     <p className="headings">ADD CATEGORIES</p>
                     <div className="catField">
-                        <input className="input" placeholder="category name" 
+                        <input className="input" placeholder="category" 
                             onChange={cat => setName(cat.target.value)} value={name}>
                         </input>
                         <input className="input" placeholder="percentage" 
                             onChange={per => setPercentage(parseInt(per.target.value))} value={percentage}>
                         </input>
-                        <Button variant="outlined" color="secondary" className={classes.button} 
+                        <Button variant="outlined" color="secondary" className={classes.buttonAdd} 
                             onClick={handleCategories}>Add
                         </Button>
                     </div>
@@ -142,7 +147,16 @@ export default function Interest() {
                                 <MenuItem value={catItem.name}>{catItem.name}</MenuItem>
                             )}
                         </Select>
-                        <Button variant="outlined" color="secondary" className={classes.button} 
+                    </div>
+                    <div className="notesContainer">
+                        <textarea 
+                            className="noteInput" 
+                            placeholder="notes about spendings" 
+                            onChange={note => setNotes(note.target.value)} value={notes}>
+                        </textarea>
+                    </div>
+                    <div>
+                     <Button variant="outlined" color="secondary" className={classes.button} 
                             onClick={handleSpent}>Submit
                         </Button>
                     </div>
@@ -160,17 +174,39 @@ export default function Interest() {
                     </div>
              </div>
         </div>
+        <div style={{ borderTop: "0.5px solid #bdbdf0 ", marginLeft: 20, marginRight: 20 }}></div>
+        <div className="bottomInfo">
         
-
-            <div className="pieChart">
-                <PieChart
-                    radius={25}
-                    viewBoxSize={[300, 100]}
-                    center={[150, 40]}
-                    data={
-                        pieChartData 
-                    }/>
+             <div className="pieChartContainer">
+                 <p className="headings">BUDGET CATEGORIES (%)</p>
+                 <div className="pieChart">
+                    <PieChart
+                        radius={80}
+                        viewBoxSize={[300, 100]}
+                        center={[150, 10]}
+                        data={
+                            pieChartData 
+                        }/>
+                 </div>
+               
             </div>
+
+            <div className="spendingInfo">
+                 <p className="headings">HISTORY</p>
+                    <div className="spendingInfoObjects">
+                        {history.map((info, index) =>
+                        <div className="spendingObject">
+                            <p className="headings">{info.date}</p>
+                            <p className="headings">{info.name}</p>
+                            <p className="headings">SPENT: {info.spent}</p>
+                            <p className="headings">{info.note}</p>
+                        </div>
+                        
+                        )}
+                    </div>          
+            </div>
+        </div>                    
+            
 
     
 
@@ -185,13 +221,21 @@ const useStyles = makeStyles((theme) => ({
         letterSpacing: 2,
         marginBottom: 10
     },
+    buttonAdd: {
+        fontSize: 12,
+        letterSpacing: 2,
+        marginBottom: 10,
+        paddingLeft: 26,
+        paddingRight: 26
+    },
     formControl: {
       margin: theme.spacing(1),
       minWidth: 120
     },
     selectEmpty: {
-        width: 200,
+        width: 160,
         marginRight: 10,
+        marginLeft: 12,
         fontSize: 15,
         color: "white",
         "&:before": {
