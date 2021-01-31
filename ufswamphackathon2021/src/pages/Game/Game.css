@@ -9,7 +9,6 @@
     background-image: url('../../assets/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height:1000px;
 }
 
 .title {
@@ -18,7 +17,7 @@
     font-size: 25px;
     /* font-weight: 300; */
     /* letter-spacing: 3px; */
-    font-family: Gill Sans, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     color: #bdbdf0;
     margin: 5
 }
@@ -31,9 +30,9 @@
 	color: #bdbdf0;
 }
 
-.input {
+.gameInput {
     background-color: #1a1e4d;
-    border-color: #8a2be2;
+    border-color: #562a73;
     height: 30px;
     margin: 10px;
     border-radius: 5px;
@@ -41,14 +40,15 @@
     box-shadow: 0;
     color: #bdbdf0;
     font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.input::placeholder {
-    color: #8a2be2;;
+.gameInput::placeholder {
+    color: #562a73;;
 }
 
-.info {
-    font-size: 14px;
+.gameText {
+    font-size: 16px;
     font-weight: 300;
     letter-spacing: 3px;
     justify-content: center;
@@ -59,4 +59,22 @@
     margin: 20px;
     color: #bdbdf0;
     font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.storyText {
+    margin-left: 300px;
+    margin-right: 300px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.healthText {
+    margin-left: 550px;
+    margin-right: 550px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* border: dashed;
+    border-width: 2px;
+    border-color: rgb(255, 0, 119); */
+    font-family: 'Courier New', Courier, monospace;
 }

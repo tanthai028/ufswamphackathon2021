@@ -5,9 +5,9 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 export default function Interest() {
     const classes = useStyles();
-    const [annualIncome, setAnnualIncome] = useState('') 
-    const [loanBalance, setLoanBalance] = useState('')
-    const [days, setDays] = useState('')
+    const [annualIncome, setAnnualIncome] = useState(0) 
+    const [loanBalance, setLoanBalance] = useState(0)
+    const [days, setDays] = useState(0)
     const [result, setResult] = useState(0)
     
     const calculate = (e) => {
@@ -20,26 +20,27 @@ export default function Interest() {
 
     }
 
-
     return (
         
         <div className="interestPage">
-            <p className="title">Interest</p>
-            <form onSubmit = {calculate}>
-                <p className="headings">INPUT ANNUAL INTEREST</p>
-                <input placeholder="annual interest" className="input" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
-                <br></br>
-                <p className="headings">INPUT LOAN BALANCE</p>
-                <input  placeholder="loan balance" className="input" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
-                <br></br>
-                <p className="headings">INPUT DAYS SINCE LAST PAYMENT</p>
-                <input  placeholder="days" className="input" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
-                <br></br>
-                <br></br>
-                <Button  variant="outlined" color="secondary" className={classes.button}>Submit</Button>
-            </form>
-            <p2 className="info">Interest occured since last payment: {result}</p2>
-        </div>
+        <p className="title">Interest Page</p>
+        <form onSubmit = {calculate}>
+            <p className="headings">INPUT ANNUAL INTEREST</p>
+            <input className="inputInterest" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
+            <br></br>
+            <p className="headings">INPUT LOAN BALANCE</p>
+            <input className="inputInterest" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
+            <br></br>
+            <p className="headings">INPUT DAYS SINCE LAST PAYMENTS</p>
+            <input className="inputInterest" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
+            <br></br>
+            <br></br>
+            <Button variant="outlined" color="secondary" className={classes.button} 
+                onClick={calculate}>Submit
+            </Button>
+        </form>
+        <p className="headings">Interest occured since last payment: {result}</p>
+    </div>
     )
 }
 

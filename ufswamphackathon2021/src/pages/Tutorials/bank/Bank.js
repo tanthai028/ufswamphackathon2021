@@ -7,19 +7,19 @@ export default function Bank() {
           <p className="title">Tutorials</p>
            <div>
               <div className="modules">
-              <p className = "title" >Credit and Debit 101</p>
+              <p className = "headings" >Credit and Debit 101</p>
               </div>
 
               <div className="modules">
-              <p className = "title" >Taxes 101</p>
+              <p className = "headings" >Taxes 101</p>
               </div>
 
               <div className="modules">
-              <p className = "title" >How To: Banking</p>
+              <p className = "headings" >How To: Banking</p>
               </div>
 
               <div className="modules">
-              <p className = "title" >How To: Checks and Bills</p>
+              <p className = "headings" >How To: Checks and Bills</p>
               </div>
               
            </div>
