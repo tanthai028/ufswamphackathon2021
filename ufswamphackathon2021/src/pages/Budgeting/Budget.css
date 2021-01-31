@@ -4,29 +4,37 @@
     width: 100%;
     height: 100%;
     background-color: #1a1e4d;
-    color: white;
+    color: #bdbdf0;
 }
 
 
 .title {
     text-align: center;
     padding-top: 20px;
-    font-size: 30px;
-    font-weight: 300;
-    letter-spacing: 3px;
+    font-size: 25px;
+    /* font-weight: 300; */
+    /* letter-spacing: 3px; */
+    font-family: Gill Sans, sans-serif;
+    color: #bdbdf0;
+    margin: 5
 }
 
 .headings {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 500;
     letter-spacing: 3px;
+    font-family: Gill Sans, sans-serif;
+	color: #bdbdf0;
 }
 
 .date {
     text-align: center;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 3px;
+    font-family: Gill Sans, sans-serif;
+    color: #bdbdf0;
+    margin: 0
 }
 
 .topContainer {
@@ -34,7 +42,7 @@
     flex: 1;
     flex-direction: row;
     text-align: center;
-    
+    margin-bottom: 10px;
 }
 
 .formArea {
@@ -60,12 +68,37 @@
     background-color: #1a1e4d;
     border-color: #8a2be2;
     height: 30px;
+    width: 160px;
     margin: 10px;
     border-radius: 5px;
     border-width: 1px;
     box-shadow: 0;
-    color: white;
+    color: #bdbdf0;
     font-size: 16px;
+}
+
+.input::placeholder {
+    color: #8a2be2;
+}
+
+.noteInput {
+    background-color: #1a1e4d;
+    border-color: #8a2be2;
+    height: 100px;
+    width: 450px;
+    margin: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: 0;
+    color: #bdbdf0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+}
+
+
+.noteInput::placeholder {
+    color: #8a2be2;
 }
 
 .catInfo {
@@ -77,6 +110,7 @@
     align-content: center;
     display: flex;
     flex-direction: column;
+    color: #1a1e4d
 }
 
 
@@ -89,4 +123,37 @@
     align-content: center;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottomInfo {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.spendingInfo {
+    width: 50%;
+    padding: 20px;
+}
+
+.pieChartContainer {
+    width: 50%;
+    padding: 20px;
+   margin-bottom: 200px;
+   height: 500px;
+}
+
+.pieChart {
+    height: 600px;
+}
+
+
+
+

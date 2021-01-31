@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import './Interest.css';
+import Button from '@material-ui/core/Button';
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 export default function Interest() {
-    const [annualIncome, setAnnualIncome] = useState(0) 
-    const [loanBalance, setLoanBalance] = useState(0)
-    const [days, setDays] = useState(0)
+    const classes = useStyles();
+    const [annualIncome, setAnnualIncome] = useState('') 
+    const [loanBalance, setLoanBalance] = useState('')
+    const [days, setDays] = useState('')
     const [result, setResult] = useState(0)
     
     const calculate = (e) => {
@@ -19,24 +23,32 @@ export default function Interest() {
 
     return (
         
-        <div>
-            <h1>Interest Page</h1>
+        <div className="interestPage">
+            <p className="title">Interest</p>
             <form onSubmit = {calculate}>
-                <p>Input annual interest</p>
-                <input onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
+                <p className="headings">INPUT ANNUAL INTEREST</p>
+                <input placeholder="annual interest" className="input" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
                 <br></br>
-                <p>Input loan balance</p>
-                <input onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
+                <p className="headings">INPUT LOAN BALANCE</p>
+                <input  placeholder="loan balance" className="input" onChange = {e => setLoanBalance(e.target.value)} value = {loanBalance}  ></input>
                 <br></br>
-                <p>Input days since last payments</p>
-                <input onChange = {e => setDays(e.target.value)} value = {days}  ></input>
+                <p className="headings">INPUT DAYS SINCE LAST PAYMENT</p>
+                <input  placeholder="days" className="input" onChange = {e => setDays(e.target.value)} value = {days}  ></input>
                 <br></br>
                 <br></br>
-                <button>Submit</button>
+                <Button  variant="outlined" color="secondary" className={classes.button}>Submit</Button>
             </form>
-            <p2>Interest occured since last payment: {result}</p2>
+            <p2 className="info">Interest occured since last payment: {result}</p2>
         </div>
     )
 }
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+        fontSize: 12,
+        letterSpacing: 2,
+        margin: 12
+    }
+  }));
 
 

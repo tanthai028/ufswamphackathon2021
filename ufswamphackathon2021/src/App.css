@@ -3,3 +3,7 @@ html {
     width: 100%;
     font-size:0;
 }
+
+.App {
+    background-color: #1a1e4d;
+}

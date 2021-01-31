@@ -3,9 +3,10 @@ import './Budget.css';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { PieChart } from 'react-minimal-pie-chart';
 import moment from 'moment';
+import InputBase from '@material-ui/core/InputBase';
 
 
 export default function Interest() {
@@ -16,6 +17,7 @@ export default function Interest() {
     const [percentage, setPercentage] = useState('');
     const [categories, setCategories] = useState([]);
     const [totalPercent, setTotalPercent] = useState(0);
+    const [notes, setNotes] = useState("");
     const [warning, setWarning] = useState('')
     const [spent, setSpent] = useState('');
     const [pickSpent, setPickSpent] = useState('');
@@ -25,6 +27,7 @@ export default function Interest() {
     const [colorCount, setColorCount] = useState(0);
     const [isSpentSubmitted, setIsSpentComitted] = useState(false);
     const [date, setDate] = useState('');
+    const [history, setHistory] = useState([]);
     
 
     useEffect(() => { 
@@ -63,13 +66,16 @@ export default function Interest() {
         setIsSpentComitted(true);
     }
 
+
     useEffect(() => {
         if (isSpentSubmitted) {
             Object.keys(categories).map(function(key,index) {
                 if(pickSpent == categories[key].name && categories[key].catBalance - spent >= 0) {
                     categories[key].catBalance  = categories[key].catBalance - spent;
-                    console.log(categories[key].catBalance);
-                    console.log(categories);
+    
+                    setHistory(list => [...list, {name: categories[key].name, note: notes, spent: spent, date: date}]);
+                    console.log(history);
+                    console.log(notes);
                 }
             setIsSpentComitted(false);
            })
@@ -85,47 +91,74 @@ export default function Interest() {
     return (
         <div className="budget">
         <div className="topText">
-            <p className="title">BUDGET PAGE</p>
+            <p className="title">Budgeting</p>
             <p className="date">{date}</p>
         </div>
         <div className="topContainer">
          <div className="formArea">
-                <form onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
                     <p className="headings">SET TOTAL MONTHLY BALANCE</p>
-                    <input className="input" placeholder="amount" onChange={e => setTotalBalance(parseInt(e.target.value))} value={totalBalance}></input>
-                    <Button variant="outlined" color="secondary" onClick={handleSubmit}>Submit</Button>
+                    <div className="">
+                        <input className="input" placeholder="amount" 
+                            onChange={e => setTotalBalance(parseInt(e.target.value))} value={totalBalance}>
+                        </input>
+                        <Button variant="outlined" color="secondary" className={classes.button} 
+                            onClick={handleSubmit}>Submit
+                        </Button>
+                    </div>
+                
                 </form>
-                <form className="cat" onSubmit={handleCategories}>
+                <form className="form" onSubmit={handleCategories}>
                     <p className="headings">ADD CATEGORIES</p>
-                    <input className="input" placeholder="category name" onChange={cat => setName(cat.target.value)} value={name}></input>
-                    <input className="input" placeholder="percentage" onChange={per => setPercentage(parseInt(per.target.value))} value={percentage}></input>
-                    <Button variant="outlined" color="secondary" onClick={handleCategories}>Submit</Button>
+                    <div className="catField">
+                        <input className="input" placeholder="category" 
+                            onChange={cat => setName(cat.target.value)} value={name}>
+                        </input>
+                        <input className="input" placeholder="percentage" 
+                            onChange={per => setPercentage(parseInt(per.target.value))} value={percentage}>
+                        </input>
+                        <Button variant="outlined" color="secondary" className={classes.buttonAdd} 
+                            onClick={handleCategories}>Add
+                        </Button>
+                    </div>
                 </form>
-                <form className="spending" onSubmit={handleSpent}>
+                <form className="form" onSubmit={handleSpent}>
                     {/* <Dropdown className="test" options={dropdownList} onChange={e => setPickSpent(e)} placeholder="Select an option"/> */}
                     <div className={classes.root}>
                         <p className="headings">SPENT</p>
-                        <input className="input" placeholder="amount" onChange={num => setSpent(num.target.value)} value={spent}></input>
+                        <input className="input" placeholder="amount" className="input"
+                            onChange={num => setSpent(num.target.value)} value={spent}>
+                        </input>
                         <Select
                             labelId="demo-simple-select-helper-label"
                             id="demo-simple-select-helper"
+                            input={<BootstrapInput />}
                             className={classes.selectEmpty}
                             value={pickSpent}
+                            MenuProps={{ classes: { paper: classes.select } }}
                             inputProps={{
                                 classes: {
                                     icon: classes.icon,
                                 },
                             }}
-                            onChange={choice => setPickSpent(choice.target.value)}
-                            >
-                            <MenuItem value="">
-                                <em>Select</em>
-                            </MenuItem>
+                            onChange={choice => setPickSpent(choice.target.value)}>
+                            <MenuItem value=""> <em>Select</em> </MenuItem>
                             {categories.map((catItem, index) =>
                                 <MenuItem value={catItem.name}>{catItem.name}</MenuItem>
                             )}
                         </Select>
-                        <Button variant="outlined" color="secondary" onClick={handleSpent}>Submit</Button>
+                    </div>
+                    <div className="notesContainer">
+                        <textarea 
+                            className="noteInput" 
+                            placeholder="notes about spendings" 
+                            onChange={note => setNotes(note.target.value)} value={notes}>
+                        </textarea>
+                    </div>
+                    <div>
+                     <Button variant="outlined" color="secondary" className={classes.button} 
+                            onClick={handleSpent}>Submit
+                        </Button>
                     </div>
                 </form>
             </div>
@@ -141,17 +174,39 @@ export default function Interest() {
                     </div>
              </div>
         </div>
+        <div style={{ borderTop: "0.5px solid #bdbdf0 ", marginLeft: 20, marginRight: 20 }}></div>
+        <div className="bottomInfo">
         
-
-            <div className="pieChart">
-                <PieChart
-                    radius={25}
-                    viewBoxSize={[300, 100]}
-                    center={[150, 40]}
-                    data={
-                        pieChartData 
-                    }/>
+             <div className="pieChartContainer">
+                 <p className="headings">BUDGET CATEGORIES (%)</p>
+                 <div className="pieChart">
+                    <PieChart
+                        radius={80}
+                        viewBoxSize={[300, 100]}
+                        center={[150, 10]}
+                        data={
+                            pieChartData 
+                        }/>
+                 </div>
+               
             </div>
+
+            <div className="spendingInfo">
+                 <p className="headings">HISTORY</p>
+                    <div className="spendingInfoObjects">
+                        {history.map((info, index) =>
+                        <div className="spendingObject">
+                            <p className="headings">{info.date}</p>
+                            <p className="headings">{info.name}</p>
+                            <p className="headings">SPENT: {info.spent}</p>
+                            <p className="headings">{info.note}</p>
+                        </div>
+                        
+                        )}
+                    </div>          
+            </div>
+        </div>                    
+            
 
     
 
@@ -161,38 +216,48 @@ export default function Interest() {
 }
 
 const useStyles = makeStyles((theme) => ({
+    button: {
+        fontSize: 12,
+        letterSpacing: 2,
+        marginBottom: 10
+    },
+    buttonAdd: {
+        fontSize: 12,
+        letterSpacing: 2,
+        marginBottom: 10,
+        paddingLeft: 26,
+        paddingRight: 26
+    },
     formControl: {
       margin: theme.spacing(1),
       minWidth: 120
     },
     selectEmpty: {
-        width: 200,
+        width: 160,
         marginRight: 10,
+        marginLeft: 12,
+        fontSize: 15,
         color: "white",
         "&:before": {
-            borderColor: "blueviolet",
+            borderColor: "#8a2be2",
             //width: 200,
         }, 
         '&:after': {
-            borderColor: "blueviolet",
+            borderColor: "#8a2be2",
         },
-        icon: {
-            fill: "blueviolet",
-        }
-    },
-    multilineColor:{
-        color:'red',
-    
+    }, 
+    select: {
+        "& ul": {
+            backgroundColor: "#8a2be2",
+        },
+        "& li": {
+            fontSize: 12,
+            color: 'white'
+        },
     },
     specialOutline: {
         borderColor: 'red',
         color: 'red'
-      },
-      cardRoot: {
-        width: 300,
-        height: 300,
-        backgroundColor: '#8a2be2',
-        color: 'white'
       },
       title: {
         fontSize: 20,
@@ -200,5 +265,39 @@ const useStyles = makeStyles((theme) => ({
         letterSpacing: 3
       },
   }));
+
+  const BootstrapInput = withStyles((theme) => ({
+    root: {
+      'label + &': {
+        marginTop: theme.spacing(3),
+      },
+    },
+    input: {
+      borderRadius: 4,
+      position: 'relative',
+      backgroundColor: '#1a1e4d',
+      border: '1px solid #8a2be2',
+      fontSize: '15px',
+      transition: theme.transitions.create(['border-color', 'box-shadow']),
+      // Use the system font instead of the default Roboto font.
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:focus': {
+        fontSize: '15px',
+        borderRadius: 4,
+        borderColor: '#8a2be2',
+      },
+    },
+  }))(InputBase);
 
 
