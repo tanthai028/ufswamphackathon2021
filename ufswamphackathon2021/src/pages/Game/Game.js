@@ -17,7 +17,7 @@ export default function Game() {
     const[instruction, setInstruction] = useState("Press Start to Play")
     const[start,setStart] = useState("Start")
     const[textInQ,setTextInQ] = useState("")
-    const[story,setStory] = useState("You are stranded in a world full of broken people and machine where money is all that exists...Let's see how long you can survive for.")
+    const[story,setStory] = useState("You are stranded in a world full of broken people and machine, where money is all that exists...Let's see how long you can survive for.")
 
     
     const[npcReply, setNpcReply] = useState("0")
@@ -269,7 +269,7 @@ export default function Game() {
  }
     return (
         <div className="gamePage">
-        <p className="title">Money Run</p>
+        <p className="gameTitle">Money Run</p>
         <form onSubmit = {run}>
             <div className="healthText">
                 <center><p className="gameText">MONEY | ${budget}</p></center>

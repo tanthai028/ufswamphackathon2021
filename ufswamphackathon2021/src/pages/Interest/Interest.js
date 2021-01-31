@@ -23,7 +23,7 @@ export default function Interest() {
     return (
         
         <div className="interestPage">
-        <p className="title">Interest Page</p>
+        <p className="title">Interest</p>
         <form onSubmit = {calculate}>
             <p className="headings">INPUT ANNUAL INTEREST</p>
             <input className="inputInterest" onChange = {e => setAnnualIncome(e.target.value)} value = {annualIncome}  ></input>
@@ -39,7 +39,7 @@ export default function Interest() {
                 onClick={calculate}>Submit
             </Button>
         </form>
-        <p className="headingInterest">Interest occured since last payment: {result}</p>
+        <p className="headings">Interest occured since last payment: {result}</p>
     </div>
     )
 }
