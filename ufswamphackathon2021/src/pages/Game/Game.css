@@ -17,7 +17,7 @@
     font-size: 25px;
     /* font-weight: 300; */
     /* letter-spacing: 3px; */
-    font-family: Gill Sans, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     color: #bdbdf0;
     margin: 5
 }
@@ -40,6 +40,7 @@
     box-shadow: 0;
     color: #bdbdf0;
     font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .gameInput::placeholder {
@@ -61,7 +62,7 @@
 }
 
 .text {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     letter-spacing: 3px;
     justify-content: center;
@@ -72,20 +73,29 @@
     margin: 20px;
     color: #bdbdf0;
     font-weight: 500;
-    
+    font-family: fantasy;
 }
 
 .storyText {
     margin-left: 300px;
     margin-right: 300px;
     padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
 .healthText {
     margin-left: 550px;
     margin-right: 550px;
     padding: 40px;
-    border: dashed;
-    border-width: 4px;
-    border-color: red;
+    /* border: dashed;
+    border-width: 2px;
+    border-color: rgb(255, 0, 119); */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.storyLine {
+    /* border: solid;
+    border-width:1px;
+    border-color: #bdbdf0; */
 }

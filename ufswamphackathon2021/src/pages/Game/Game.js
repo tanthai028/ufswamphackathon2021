@@ -17,7 +17,7 @@ export default function Game() {
     const[instruction, setInstruction] = useState("Press Start to Play")
     const[start,setStart] = useState("Start")
     const[textInQ,setTextInQ] = useState("")
-    const[story,setStory] = useState("You are stranded in a world full of broken men and machine where money is all..lets see how long you can survive for")
+    const[story,setStory] = useState("You are stranded in a world full of broken people and machine where money is all that exists...Let's see how long you can survive for.")
 
     
     const[npcReply, setNpcReply] = useState("0")
@@ -47,7 +47,7 @@ export default function Game() {
     //var randQuestion = Number(Math.floor(Math.random()*(10-1+1)+1));
     // giive random question
     if (Number(week) === 0){
-        setStory("In the middle of a seemingly never ending road heading straight [North] and [South]. The direction you choose matters")
+        setStory("In the middle of a seemingly never-ending road heading directly [North] and [South]. The direction you choose matters.")
         weekNum = week + 1
         setWeek(weekNum)
     } else{
@@ -56,7 +56,7 @@ export default function Game() {
     
 
     switch(reply.toLowerCase()){
-        case "north":   setTextInQ(" Week " + week + ": In the North, you stumble upon a bright neon sign conencted to a small hut saying 'Goods for Sale'. A cybernetic man is selling goods inside")
+        case "north":   setTextInQ(" Week " + week + ": In the North, you stumble upon a bright neon sign conencted to a small hut saying, 'Goods for Sale'. A cybernetic man is selling goods inside.")
                         setInstruction(" He is willing to sell you food[1] for $" + foodCost + " or a flute[2] for $" + entertainmentCost)
                         weekNum = week + 1;
                         setWeek(weekNum)
@@ -66,8 +66,8 @@ export default function Game() {
                         setNpcReply(1);
 
                         break;
-        case "south":  setTextInQ(" Week " + week + ": In the south, a crew of raggedy robots are watching two humans in shackles fight. Off in the distance their belongings lay on the ground.")
-                        setInstruction("[Steal] items or [Move] forward")
+        case "south":  setTextInQ(" Week " + week + ": In the South, a crew of raggedy robots are watching two humans in shackles fight. Off in the distance, their belongings lie on the ground.")
+                        setInstruction("[Steal] items or [Move] forward.")
                         weekNum = week + 1;
                         setWeek(weekNum)
                         foodVal = food - Number(Math.floor(Math.random()*(10-5+1)+5))
@@ -75,11 +75,11 @@ export default function Game() {
                         setDirection("south")
                         break;
 
-        case "move": setTextInQ("Your tread on forward")
+        case "move": setTextInQ("Your tread on forward.")
                         foodVal = food - Number(Math.floor(Math.random()*(15-5+1)+5))
                         setFood(foodVal)
                         break;
-        case "steal": setTextInQ("You snatch a bag and make a run for it. Inside you find a variety of mechanical parts. These will fetch quite the price")
+        case "steal": setTextInQ("You snatch a bag and make a run for it. Inside you find a variety of mechanical parts. These will fetch quite the price.")
                         setInstruction("...")
                         newBudget = Number(budget) + 50;
                         setBudget(newBudget)
@@ -87,7 +87,7 @@ export default function Game() {
                         setFood(foodVal)
                         setTimeout(function(){
                             setTextInQ(" A distance away from the theft, nervousness sets in. Looking side to side. You cannot help but wonder if they are looking for you.")
-                            setInstruction("Find a place to [Lay low] or [Move] forward")
+                            setInstruction("Find a place to [Lie low] or [Move] forward.")
                             setFood(foodVal)
                             happinessVal = happiness - Number(Math.floor(Math.random()*(15-3+1)+3));
                             setHappiness(happinessVal)
@@ -99,15 +99,15 @@ export default function Game() {
                         happinessVal = happiness - Number(Math.floor(Math.random()*(15-3+1)+3));
                         setHappiness(happinessVal)
                         break;
-        case "give":    setTextInQ("You give the child a sack of food. He smiles and runs off. You pack your stuff, put out the fire, and continue forward")
+        case "give":    setTextInQ("You give the child a sack of food. He smiles and runs off. You pack your stuff, put out the fire and continue forward.")
                         setInstruction("Input [Move] to go forward")
                         break;
-        case "follow":  setTextInQ("The child seems to head towards nowhere, a field of nothing. It begins to glow orange. Are your eyes deceiving you? No. The land and then the sky begin to glow. Only then do you realize that everything was orange all along")
+        case "follow":  setTextInQ("The child seems to head towards nowhere, a field of nothing. It begins to glow orange. Are your eyes deceiving you? No. The land and the sky begin to glow. Only then do you realize that everything was orange all along.")
                         setHappiness(100)
                         setInstruction("[Move]")
                         setEnd("True")
                         break;
-        case "donate": setTextInQ("You walk up to the door and drop some coins into the box. A bell violently rings. You flee as the sound of the bell fades away behind you")
+        case "donate": setTextInQ("You walk up to the door and drop some coins into the box. A bell rings violently. You flee as the sound of the bell fades away behind you.")
                         foodVal = food - Number(Math.floor(Math.random()*(15-5+1)+5))
                         happinessVal = happiness - Number(Math.floor(Math.random()*(15-3+1)+3));
                         newBudget = Number(budget) - 20;
@@ -116,8 +116,8 @@ export default function Game() {
                         setFood(foodVal)
                         setInstruction("...")
                         setTimeout(function(){
-                        setTextInQ("Tired and out of breath. You can force yourself to [move] forward or find a place to [rest]")
-                        setInstruction("[Input the command or number inside the bracket for choice]")
+                        setTextInQ("Tired and out of breath. You can force yourself to [move] forward or find a place to [rest].")
+                        setInstruction("[Input the command or number inside the bracket for choice].")
                         },8000);
                         break;
         case "man":     setTextInQ("'You chose the right man. Meet me here in a week and I will make you a RICH man. HAHAHAHHA!'")
@@ -128,32 +128,32 @@ export default function Game() {
                         setTimeout(function(){
                             weekNum = week + 1;
                             setWeek(weekNum)
-                            setTextInQ(" Week " + week + ": A week later you return to the same location to find no one in sight")
+                            setTextInQ(" Week " + week + ": A week later you return to the same location to find no one in sight.")
                             happinessVal = happiness - 25;
                             setHappiness(happinessVal)
-                            setInstruction("Input [Move] to go forward")
+                            setInstruction("Input [Move] to go forward.")
                         },5000);
                         break;
-        case "rest":    setTextInQ("Finding a nice flat ground, you set up camp and doze off....")
+        case "rest":    setTextInQ("Finding a nice flat ground, you set up camp and doze off...")
                         setInstruction("...")
                         setTimeout(function(){
                         foodVal = food - Number(Math.floor(Math.random()*(15-5+1)+5))
                         setFood(foodVal)
-                        setTextInQ(" Week " + week + ": 'HEY WAKE UP' you shoot up staring at the tall man that took your money before.'hey man...I got your money now $100. Double what you gave'")
+                        setTextInQ(" Week " + week + ": 'HEY, WAKE UP!' You shoot up, staring at the tall man that took your money before. 'Hey, man...I got your money now $100. Double what you gave.'")
                         setInstruction("[Take] money and tell him to get away or make him pay [interest] since he was late")
                         },5000);
                         break;
-        case "interest": setTextInQ("...fine take this 50. Thanks for the money, but I hope to never see you again heh.")
-                         setInstruction("[Leave] the area or ask for [More]")
+        case "interest": setTextInQ("...Fine take this 50. Thanks for the money, but I hope to never see you again heh.")
+                         setInstruction("[Leave] the area or ask for [More].")
                          break;
-        case "leave":   setTextInQ("Long afer you have left, you begin to feel hungry and goto grab a bite. Only to find that there is nothing left. That man stole all your food.")
+        case "leave":   setTextInQ("Long afer you have left, you begin to feel hungry and go to grab a bite. Only to find that there is nothing left. That man stole all your food.")
                         setInstruction("...")
                         setTimeout(function(){
                         setFood(0)
                         weekNum = week + 1;
                             setWeek(weekNum)
                         setTextInQ("Week " + week + ": The road is no longer stright. Your hunger changes you")
-                        setInstruction("Try and [move] forward")
+                        setInstruction("Try and [move] forward.")
                         },5000);
                         break
         default:
@@ -278,7 +278,7 @@ export default function Game() {
             </div>
 
             <div className="storyText">
-                <center><p className="text">{story}</p></center>
+                <div className="storyLine"><center><p className="text">{story}</p></center></div>
                 <center><p className="text">{textInQ}</p></center>
                 <center><p className="text">{instruction}</p></center>
             </div>
