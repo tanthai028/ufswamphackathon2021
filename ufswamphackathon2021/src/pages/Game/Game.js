@@ -272,15 +272,15 @@ export default function Game() {
         <p className="title">Money Run</p>
         <form onSubmit = {run}>
             <div className="healthText">
-                <center><p className="text">MONEY | ${budget}</p></center>
-                <center><p className="text">FOOD | {food} points</p></center>
-                <center><p className="text">HAPPINESS | {happiness}%</p></center>
+                <center><p className="gameText">MONEY | ${budget}</p></center>
+                <center><p className="gameText">FOOD | {food} points</p></center>
+                <center><p className="gameText">HAPPINESS | {happiness}%</p></center>
             </div>
 
             <div className="storyText">
-                <div className="storyLine"><center><p className="text">{story}</p></center></div>
-                <center><p className="text">{textInQ}</p></center>
-                <center><p className="text">{instruction}</p></center>
+                <div className="storyLine"><center><p className="gameText">{story}</p></center></div>
+                <center><p className="gameText">{textInQ}</p></center>
+                <center><p className="gameText">{instruction}</p></center>
             </div>
 
             {/* <center> <input className="gameInput" onChange = {e => setReply(e.target.value)} value = {reply}  ></input></center> */}
